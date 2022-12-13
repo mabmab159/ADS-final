@@ -6,16 +6,16 @@
 }
 
 body{
-    background-image: url("https://previews.123rf.com/images/dimapolie/dimapolie1804/dimapolie180400116/99171974-patr%C3%B3n-de-hotel-de-vector-fondo-transparente-del-hotel.jpg");
-    font-family: sans-serif;
+    background: #4B79A1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #283E51, #4B79A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      font-family: sans-serif;
     background-size: cover;
     animation: fondo 13s linear infinite;
     animation-timing-function: linear;
 }
 
-@keyframes fondo{
-    100%{background-position: 866px 1300px;}
-}
+
 /* Dashboard */
 
 .habitacionesContainer h2{

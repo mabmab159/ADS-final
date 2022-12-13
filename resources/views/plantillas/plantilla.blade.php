@@ -27,7 +27,8 @@
             <li class="navListItem"><a href="{{route("usuarios")}}">Usuarios</a></li>
             <li class="navListItem"><a href="{{route("listarhabitacion")}}">Habitación</a></li>
             <li class="navListItem"><a href="{{route("listarProducto")}}">Productos</a></li>
-            <li class="navListItem"><a href="{{route("ventas")}}">Ventas</a></li>
+            <li ><a>Ventas</a></li>
+     
             <li class="navListItem"><a href="{{route("reporte")}}">Reportes</a></li>
         </ul>
     </div>
