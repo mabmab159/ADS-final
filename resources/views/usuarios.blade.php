@@ -31,11 +31,7 @@
                         @else
                             <option value="recepcionista">Recepcionista</option>
                         @endif
-                        @if($usuario->cargo == "conserje")
-                            <option value="conserje" selected>Conserje</option>
-                        @else
-                            <option value="conserje">Conserje</option>
-                        @endif
+                      
                     </select>
                 </div>
                 <div class="textBox">
@@ -74,7 +70,6 @@
                     <select class="opcUsuarios" name="cargo">
                         <option value="administrador">Administrador</option>
                         <option value="recepcionista">Recepcionista</option>
-                        <option value="conserje">Conserje</option>
                     </select>
                 </div >
                 <div class="textBox">
