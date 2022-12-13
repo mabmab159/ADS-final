@@ -8,11 +8,11 @@
                     <h2>Ventas</h2>
                     <div class="ventas-box">
                         <label>Cliente</label>
-                        <input name="cliente" placeholder="Ingrese cliente">
+                        <input name="cliente" placeholder="Ingrese cliente" minlength="1">
                     </div>
                     <div class="ventas-box">
                         <label>DNI</label>
-                        <input name="dni" placeholder="Ingrese DNI">
+                        <input name="dni" placeholder="Ingrese DNI" type="number" min="10000000" max="99999999">
                     </div>
                     <div class="btnVentas">
                         <button type="submit">Guardar</button>

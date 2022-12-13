@@ -63,63 +63,6 @@
                 @foreach($ventas as $venta)
                     <tr>
                         <td>{{$venta->id}}</td>
-                        <td>{{$venta->nombre_producto}}</td>
-                        <td>{{$venta->cantidad}}</td>
-                        <td>{{$venta->precio}}</td>
-                        <td>{{$venta->cliente}}</td>
-                        <td>{{$venta->dni}}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-<<<<<<< HEAD
-    </div>
-</div>
-=======
-        <button type="submit">Filtrar</button>
-    </form>
-    <div>Ingresos por alquiler</div>
-    <table>
-        <thead>
-        <tr>
-            <td>Id</td>
-            <td>Numero de habitación</td>
-            <td>Precio</td>
-            <td>Cliente</td>
-            <td>DNI</td>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($alquileres as $alquiler)
-            <tr>
-                <td>{{$alquiler->id}}</td>
-                <td>{{$alquiler->numero_habitacion}}</td>
-                <td>{{$alquiler->precio}}</td>
-                <td>{{$alquiler->cliente}}</td>
-                <td>{{$alquiler->dni}}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-    <div>Ingresos por ventas adicionales</div>
-    <div class="formProductoVentas">
-        <div class="tableContainer">
-            <table>
-                <thead>
-                <tr>
-                    <td>Id</td>
-                    <td>Nombre de producto</td>
-                    <td>Cantidad</td>
-                    <td>Precio</td>
-                    <td>Cliente</td>
-                    <td>DNI</td>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($ventas as $venta)
-                    <tr>
-                        <td>{{$venta->id}}</td>
                         <td>{{$venta->nombre}}</td>
                         <td>{{$venta->cantidad}}</td>
                         <td>{{$venta->precio}}</td>
@@ -131,5 +74,5 @@
             </table>
         </div>
     </div>
->>>>>>> ae177ca286e177c6aa12a928c5ca01e971f73857
+</div>
 @endsection

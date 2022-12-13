@@ -9,6 +9,6 @@ class dashboardController extends Controller
 {
     public function mostrarDashboard()
     {
-        return view("dashboard")->with("habitaciones", Habitacion::all()->sortBy("numero_habitacion"));
+        return view("dashboard")->with("habitaciones", Habitacion::all()->where("status", 1)->sortBy("numero_habitacion"));
     }
 }
