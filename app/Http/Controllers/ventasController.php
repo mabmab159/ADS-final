@@ -23,8 +23,8 @@ class ventasController extends Controller
                 $venta = new Ventas();
                 $venta->id_venta = $cantidad + 1;
                 $venta->idproducto = $producto->id;
-                $venta->nombre = $request->nombre;
-                $venta->precio = $request->precio * $request["producto" . $producto->id];
+                $venta->nombre = $producto->nombre;
+                $venta->precio = $producto->precio * $request["producto" . $producto->id];
                 $venta->cantidad = $request["producto" . $producto->id];
                 $venta->cliente = $request->cliente;
                 $venta->dni = $request->dni;

@@ -7,6 +7,7 @@ use App\Models\Habitacion;
 use App\Models\Producto;
 use App\Models\Ventas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class habitacionController extends Controller
 {
@@ -33,7 +34,6 @@ class habitacionController extends Controller
         $alquiler->cliente = $request->cliente;
         $alquiler->dni = $request->dni;
         $alquiler->precio = $request->precio;
-        $alquiler->id = Ventas::max("id_venta") + 1;
         $alquiler->save();
         //Recorrer los diferentes productos y validar la venta
         $productos = Producto::all();
@@ -79,6 +79,12 @@ class habitacionController extends Controller
         } else {
             $habitacion = Habitacion::all()->where("id", $request->id)->first();
         }
+
+        // Agregando validacion
+        $control_habitacion = $request->validate([
+            "numero_habitacion" => ["unique:App\Models\habitacion,numero_habitacion"],
+        ]);
+
         $habitacion->numero_habitacion = $request->numero_habitacion;
         $habitacion->piso = $request->piso;
         $habitacion->precio = $request->precio;

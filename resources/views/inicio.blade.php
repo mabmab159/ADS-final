@@ -31,6 +31,9 @@
         @error("password")
         <span>Campo obligatorio</span>
         @enderror
+        @error("validador")
+        <span>Datos incorrectos, intente nuevamente</span>
+        @enderror
         <button class="btn">Iniciar Sesión</button>
     </div>
 
