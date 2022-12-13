@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class loginController extends Controller
 {
@@ -19,7 +20,8 @@ class loginController extends Controller
                 return redirect("/dashboard");
             }
         }
-        return redirect("/");
+        return back()->withErrors(["validador"=>'Datos incorrectos']);
+        return redirect("/")->withErrors($validator);
     }
 
     public function logout(Request $request)

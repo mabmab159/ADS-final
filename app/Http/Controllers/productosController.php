@@ -19,6 +19,13 @@ class productosController extends Controller
         } else {
             $producto = Producto::all()->where("id", $request->id)->first();
         }
+
+        $campos = $request->validate([
+            "nombre" => ["required"],
+            "precio" => ["required","numeric","min:1"],
+            "stock" => ["required", "numeric","min:1"],
+        ]);
+
         $producto->nombre = $request->nombre;
         $producto->precio = $request->precio;
         $producto->stock = $request->stock;

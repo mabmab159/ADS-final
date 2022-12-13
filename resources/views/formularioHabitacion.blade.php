@@ -23,7 +23,7 @@
             </div>
             <div>
                 <label>Documento del cliente</label>
-                <input name="dni">
+                <input name="dni" type="number" min="0" max="99999999" required>
             </div>
             <p>Listado de productos adicionales</p>
             @foreach($productos as $producto)
