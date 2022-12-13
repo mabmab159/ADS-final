@@ -27,6 +27,12 @@ class usuariosController extends Controller
                 $usuario->password = Hash::make($request->password);
             }
         }
+        $usuarios = $request->validate([
+            "nombre" => ["unique:App\Models\habitacion,numero_habitacion"],
+            "apellido" => ["required"],
+            "cargo" => ["required"],
+            "usuario" => ["required", "unique:App\Models\user,usuario"]
+        ]);
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->cargo = $request->cargo;

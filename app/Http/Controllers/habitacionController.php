@@ -83,6 +83,8 @@ class habitacionController extends Controller
         // Agregando validacion
         $control_habitacion = $request->validate([
             "numero_habitacion" => ["unique:App\Models\habitacion,numero_habitacion"],
+            "piso" => ["required"],
+            "precio" => ["required"],
         ]);
 
         $habitacion->numero_habitacion = $request->numero_habitacion;
