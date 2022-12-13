@@ -76,17 +76,18 @@ class habitacionController extends Controller
     {
         if ($request->id == 0) {
             $habitacion = new Habitacion();
+            $control_habitacion = $request->validate([
+                "numero_habitacion" => ["unique:App\Models\habitacion,numero_habitacion"],
+                "piso" => ["required"],
+                "precio" => ["required"],
+            ]);
         } else {
             $habitacion = Habitacion::all()->where("id", $request->id)->first();
+            $control_habitacion = $request->validate([
+                "piso" => ["required"],
+                "precio" => ["required"],
+            ]);
         }
-
-        // Agregando validacion
-        $control_habitacion = $request->validate([
-            "numero_habitacion" => ["unique:App\Models\habitacion,numero_habitacion"],
-            "piso" => ["required"],
-            "precio" => ["required"],
-        ]);
-
         $habitacion->numero_habitacion = $request->numero_habitacion;
         $habitacion->piso = $request->piso;
         $habitacion->precio = $request->precio;

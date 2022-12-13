@@ -21,18 +21,23 @@ class usuariosController extends Controller
         if ($request->id == 0) {
             $usuario = new User();
             $usuario->password = Hash::make($request->password);
+            $usuarios = $request->validate([
+                "nombre" => ["unique:App\Models\habitacion,numero_habitacion"],
+                "apellido" => ["required"],
+                "cargo" => ["required"],
+                "usuario" => ["required", "unique:App\Models\user,usuario"]
+            ]);
         } else {
             $usuario = User::all()->where("id", $request->id)->first();
             if (!is_null($request->password)) {
                 $usuario->password = Hash::make($request->password);
             }
+            $usuarios = $request->validate([
+                "nombre" => ["unique:App\Models\habitacion,numero_habitacion"],
+                "apellido" => ["required"],
+                "cargo" => ["required"],
+            ]);
         }
-        $usuarios = $request->validate([
-            "nombre" => ["unique:App\Models\habitacion,numero_habitacion"],
-            "apellido" => ["required"],
-            "cargo" => ["required"],
-            "usuario" => ["required", "unique:App\Models\user,usuario"]
-        ]);
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->cargo = $request->cargo;
