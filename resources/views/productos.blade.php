@@ -13,24 +13,24 @@
                 <div class="productos-box">
                     <label>Nombre producto</label>
                     <input name="nombre" value="{{$producto->nombre}}" autocomplete="off" placeholder="Ingrese Producto">
-                    @error("nombre")
-                    <span>Rellenar campo</span>
-                    @enderror
                 </div>
+                @error("nombre")
+                    <span>Rellenar campo</span>
+                @enderror
                 <div class="productos-box">
                     <label>Precio</label>
                     <input name="precio" value="{{$producto->precio}}" autocomplete="off" placeholder="Ingrese precio">
-                    @error("precio")
-                    <span>Dato erroneo</span>
-                    @enderror
                 </div>
+                @error("precio")
+                    <span>Dato erroneo</span>
+                @enderror
                 <div class="productos-box">
                     <label>Stock</label>
                     <input name="stock" value="{{$producto->stock}}" autocomplete="off" placeholder="Ingrese Stock">
-                    @error("stock")
-                    <span>Dato erroneo</span>
-                    @enderror
                 </div>
+                @error("stock")
+                    <span>Dato erroneo</span>
+                @enderror
                 <div class="btnProductos">
                     <button type="submit">Guardar</button>
                 </div>
@@ -49,24 +49,24 @@
                 <div class="productos-box">
                     <label>Nombre producto</label>
                     <input name="nombre" placeholder="Ingrese Producto" autocomplete="off">
-                    @error("nombre")
-                    <span>Rellenar campo</span>
-                    @enderror
                 </div>
+                @error("nombre")
+                    <span>Rellenar campo</span>
+                @enderror
                 <div class="productos-box">
                     <label>Precio</label>
                     <input name="precio" placeholder="Ingrese precio" autocomplete="off">
-                    @error("precio")
-                    <span>Dato erroneo</span>
-                    @enderror
                 </div>
+                @error("precio")
+                    <span>Dato erroneo</span>
+                @enderror
                 <div class="productos-box">
                     <label>Stock</label>
                     <input name="stock" placeholder="Ingrese stock" autocomplete="off">
-                    @error("stock")
-                    <span>Dato erroneo</span>
-                    @enderror
                 </div>
+                @error("stock")
+                    <span>Dato erroneo</span>
+                @enderror
                 <div class="btnProductos">
                     <button type="submit">Registrar</button>
                 </div>

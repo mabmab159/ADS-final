@@ -14,10 +14,16 @@
                     <label>Nombre</label>
                     <input name="nombre" value="{{$usuario->nombre}}" autocomplete="off">
                 </div>
+                @error("nombre")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="textBox">
                     <label>Apellido</label>
                     <input name="apellido" value="{{$usuario->apellido}}"autocomplete="off">
                 </div>
+                @error("apellido")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="textBox">
                     <label>Cargo</label>
                     <select name="cargo" class="opcUsuarios">
@@ -31,13 +37,15 @@
                         @else
                             <option value="recepcionista">Recepcionista</option>
                         @endif
-                      
                     </select>
                 </div>
                 <div class="textBox">
                     <label>Usuario</label>
                     <input name="usuario" value="{{$usuario->usuario}}"autocomplete="off">
                 </div>
+                @error("usuario")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="textBox">
                     <label>Password</label>
                     <input type="password" name="password" autocomplete="off" placeholder="Ingrese password">
@@ -61,10 +69,16 @@
                     <label>Nombre</label>
                     <input name="nombre" placeholder="Ingrese nombre" autocomplete="off">
                 </div>
+                @error("nombre")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="textBox">
                     <label>Apellido</label>
                     <input name="apellido" placeholder="Ingrese apellido" autocomplete="off">
                 </div>
+                @error("apellido")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="textBox">
                     <label>Cargo</label>
                     <select class="opcUsuarios" name="cargo">
@@ -76,19 +90,22 @@
                     <label>Usuario</label>
                     <input name="usuario" placeholder="Ingrese usuario" autocomplete="off">
                 </div>
+                @error("usuario")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="textBox">
                     <label>Password</label>
                     <input type="password"  name="password" placeholder="Ingrese password" autocomplete="off">
                 </div>
+                @error("password")
+                    <span>Campo obligatorio*</span>
+                @enderror
                 <div class="btnUsuario">
                     <button type="submit">Registrar</button>
                 </div>
-
             </div>
-
         </form>
     @endif
-
     <div class="tableContainer">
         <table cellspacing="0">
             <thead>

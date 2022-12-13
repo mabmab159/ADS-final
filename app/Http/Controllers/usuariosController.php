@@ -22,10 +22,10 @@ class usuariosController extends Controller
             $usuario = new User();
             $usuario->password = Hash::make($request->password);
             $usuarios = $request->validate([
-                "nombre" => ["unique:App\Models\habitacion,numero_habitacion"],
+                "nombre" => ["required"],
                 "apellido" => ["required"],
-                "cargo" => ["required"],
-                "usuario" => ["required", "unique:App\Models\user,usuario"]
+                "usuario" => ["required", "unique:App\Models\user,usuario"],
+                "password" => ["required"]
             ]);
         } else {
             $usuario = User::all()->where("id", $request->id)->first();
@@ -33,9 +33,8 @@ class usuariosController extends Controller
                 $usuario->password = Hash::make($request->password);
             }
             $usuarios = $request->validate([
-                "nombre" => ["unique:App\Models\habitacion,numero_habitacion"],
+                "nombre" => ["required"],
                 "apellido" => ["required"],
-                "cargo" => ["required"],
             ]);
         }
         $usuario->nombre = $request->nombre;

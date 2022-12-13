@@ -18,10 +18,16 @@
                         <label>Piso</label>
                         <input name="piso" value="{{$habitacion->piso}}"autocomplete="off" placeholder="Ingrese N° de piso" min="1" type="number">
                     </div>
+                    @error("piso")
+                        <span>Campo obligatorio*</span>
+                    @enderror
                     <div class="habitacion-box">
                         <label>Precio</label>
                         <input name="precio" value="{{$habitacion->precio}}"autocomplete="off" placeholder="Ingrese el precio" min="1" type="number">
                     </div>
+                    @error("precio")
+                        <span>Campo obligatorio*</span>
+                    @enderror
                     <div class="btnHabitacion">
                         <button type="submit">Guardar</button>
                     </div>
@@ -39,18 +45,24 @@
                     <div class="habitacion-box">
                         <label>N° Hab</label>
                         <input name="numero_habitacion" autocomplete="off" placeholder="Ingrese N° Hab" min="1" type="number">
-                        @error("numero_habitacion")
-                        <span>Numero de habitación ya usado</span>
-                        @enderror
                     </div>
+                    @error("numero_habitacion")
+                        <span>Numero de habitación ya usado</span>
+                    @enderror
                     <div class="habitacion-box">
                         <label>Piso</label>
                         <input name="piso" autocomplete="off" placeholder="Ingrese N° de piso" min="1" type="number">
                     </div>
+                    @error("piso")
+                        <span>Campo obligatorio*</span>
+                    @enderror
                     <div class="habitacion-box">
                         <label>Precio</label>
                         <input name="precio" autocomplete="off" placeholder="Ingrese el precio" min="1" type="number">
                     </div>
+                    @error("precio")
+                        <span>Campo obligatorio*</span>
+                    @enderror
                     <div class="btnHabitacion">
                         <button type="submit">Registrar</button>
                     </div>
