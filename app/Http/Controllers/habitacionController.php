@@ -30,7 +30,7 @@ class habitacionController extends Controller
         $habitacion->save();
         //Validar campos
         $campos = $request->validate([
-            "cliente" => ["required", "size:3"],
+            "cliente" => ["required", "min:3"],
             "dni" => ["numeric", "min:10000000", "max:99999999"],
         ]);
         //Guardar el alquiler para el cuadre de caja
