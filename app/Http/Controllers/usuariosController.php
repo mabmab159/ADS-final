@@ -48,7 +48,7 @@ class usuariosController extends Controller
     public function editarUsuario(Request $request)
     {
         $usuario = User::all()->where("id", $request->id)->first();
-        return view("/usuarios")->with("usuarios", User::all())->with("usuario", $usuario);
+        return view("/usuarios")->with("usuarios", User::all()->where("status",1))->with("usuario", $usuario);
     }
 
     public function eliminarUsuario(Request $request)
