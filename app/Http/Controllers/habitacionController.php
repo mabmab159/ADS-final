@@ -28,6 +28,11 @@ class habitacionController extends Controller
         $habitacion = Habitacion::all()->where("numero_habitacion", $numero_habitacion)->first();
         $habitacion->estado = 1;
         $habitacion->save();
+        //Validar campos
+        $campos = $request->validate([
+            "cliente" => ["required", "size:3"],
+            "dni" => ["numeric", "min:10000000", "max:99999999"],
+        ]);
         //Guardar el alquiler para el cuadre de caja
         $alquiler = new Alquiler();
         $alquiler->numero_habitacion = $request->numero_habitacion;

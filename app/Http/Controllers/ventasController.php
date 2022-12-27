@@ -16,6 +16,11 @@ class ventasController extends Controller
     public function realizarVenta(Request $request)
     {
         //Recorrer los diferentes productos y validar la venta
+
+        $campos = $request->validate([
+            "cliente" => ["required", "size:3"],
+            "dni" => ["numeric", "min:10000000", "max:99999999"],
+        ]);
         $productos = Producto::all();
         $cantidad = Ventas::max("id_venta");
         foreach ($productos as $producto) {
